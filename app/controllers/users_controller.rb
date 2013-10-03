@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
-
-  def welcome
- 
-  end
-  def user_type
   
-  end 
+  before_filter :authenticate_user!, only: [:new, :edit, :show]
+  
+  def home
+   @user = User.last
+  end
+  
+  def show
+     @user = User.find(params[:id])
+  end
+  
+  def edit
+    @user = User.new
+  end
   
 end

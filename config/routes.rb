@@ -1,6 +1,6 @@
 Property::Application.routes.draw do
   devise_for :users
-
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,14 +50,23 @@ Property::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   resources :users do
+   resources :welcomes do
      collection do
-       get :welcome
-       #get :sing_in
        get :user_type
      end
    end
-   root :to => 'users#index'
+   
+   resources :users  do
+     collection do
+       get :edit
+       get :home
+       delete :destroy
+     end
+   end
+   
+   resources :propertydetails 
+   
+   root :to => 'welcomes#welcome'
 
   # See how all your routes lay out with "rake routes"
 

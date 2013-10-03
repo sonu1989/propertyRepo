@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130926082159) do
+ActiveRecord::Schema.define(:version => 20131003054520) do
+
+  create_table "pictures", :force => true do |t|
+    t.string   "image"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "property_details", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "property_type"
+    t.decimal  "area",          :precision => 10, :scale => 0
+    t.decimal  "price",         :precision => 10, :scale => 0
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.string   "address"
+    t.string   "sold_status"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -37,6 +63,14 @@ ActiveRecord::Schema.define(:version => 20130926082159) do
     t.string   "city"
     t.string   "address"
     t.string   "zip_code"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "string_file_name"
+    t.string   "string_content_type"
+    t.integer  "string_file_size"
+    t.datetime "string_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

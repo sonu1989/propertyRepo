@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  property_type: MyString
+  area: 9.99
+  price: 9.99
+  country: MyString
+  state: MyString
+  city: MyString
+  address: MyString
+  sold_status: MyString
+
+two:
+  user_id: 1
+  property_type: MyString
+  area: 9.99
+  price: 9.99
+  country: MyString
+  state: MyString
+  city: MyString
+  address: MyString
+  sold_status: MyString

@@ -1,0 +1,28 @@
+<div style="margin-left:60px">
+  <h2>Listing property</h2><%= link_to 'Home',home_users_path %><br/>
+  <%= image_tag "tableback.png" %><%= image_tag "tableback.png" %><%= image_tag "tableback.png" %><%= image_tag "tableback.png" %>
+    <table width=90% border=1 class ="image">
+      <tr>
+      <th>Property Type</th>
+      <th>Area in Sqr. Feet</th>
+      <th>State </th>
+      <th>City </th>
+      </tr>
+      <% @prop.each do |p| %>
+      <tr>
+      <td align="center"><%= p.property_type %></td>
+      <td align="center"><%= p.area %></td>
+      <td align="center"><%= p.state %></td>
+      <td align="center"><%= p.city %></td>
+      <td align="center"> 
+        <%= link_to 'Show Details',propertydetail_path(p)%>
+        <%= link_to 'Edit', edit_propertydetail_path(p)%>
+        <%= link_to 'Destroy', propertydetail_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+
+      </td>
+      </tr>
+      <% end %>
+    </table>
+    <%= link_to 'Back', :back %>
+</div>
