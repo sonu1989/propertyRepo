@@ -1,19 +1,16 @@
-<div style="margin-left:300px">
+<div style="margin-left:200px">
   <p>Property Details</p><br>
+  <%=image_tag(@prop.pictures.first.image, size: "200x200")%>
+  <br/><div>Property Type  :<%= @prop.property_type %></div>
+  <div>Area in Sqr. Feet : <%= @prop.area %></div>
+  <div>Price  : <%= @prop.price %></div>
+  <div>Country : <%= @prop.country %></div>
+  <div>State : <%= @prop.state %></div>
+  <div>City : <%= @prop.city %></div>
+  <div>Location : <%= @prop.address %> </div>
   
-  <table width=90% >
-      <tr>
-      <th>Property Type</th>
-      <th>Area in Sqr. Feet</th>
-      <th>State </th>
-      <th>City </th>
-      </tr>
-      <td align="center"><%= @prop.property_type %></td>
-      <td align="center"><%= @prop.area %></td>
-      <td align="center"><%= @prop.state %></td>
-      <td align="center"><%= @prop.city %></td>
-      <td align="center"> 
-        </td>
-      </tr>
-    </table>
+  <%= link_to 'Back', :back %>
 </div>
+
+ 
+

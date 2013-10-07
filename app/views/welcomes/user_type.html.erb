@@ -1,20 +1,34 @@
-<h1>Real Estate Explorer</h1>
 <div align=right style="margin-right:20px">
-  <%= link_to "Sign in", user_session_path %>
 </div>
 <div align=center><br/><br/><br/><br/><br/>
   <h1>Let's get started!</h1>
   <h2>First, tell us what you're looking for.</h2>
 </div>
-
+<style>
+   .pos {
+    position: relative;
+    left: -100px;
+    top: 28px;
+    text-align: right;
+    width: 150px;
+   }
+   .pos_buy{
+    position: relative;
+    left: 70px;
+    top: -35px;
+    text-align: right;
+    width: 150px;
+   }
+</style>
 <div align=center class="divTable">
-  <div>
-    <div>I need sell a property</div>
-     <%= link_to "Sign up",new_user_registration_path%>
+  <div class="pos">
+    <div >I need sell a property</div>
+     <%= link_to "Sign up",new_user_registration_path , :class => 'btn btn-success btn-large'%>
+     
     </div>
-  <div>
+  <div class="pos_buy">
     <div class="divbuy">I need buy a property</div>
-    <%= link_to "Sign up",new_user_registration_path%>
+    <%= link_to "Sign up",new_user_registration_path, :class => 'btn btn-success btn-large'%>
     </div>
 </div>
 

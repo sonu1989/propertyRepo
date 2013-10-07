@@ -1,5 +1,5 @@
 <div style="margin-left:300px">
-
+<fieldset>
   <%= form_for(@prop, :url => propertydetail_path(@prop.id), :method => :put ) do |f| %>
 
     <div><%= f.label :area %><br />
@@ -22,5 +22,6 @@
     <p><%= button_to "Cancel to update", propertydetail_path(@prop), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
     <%= link_to "Back", :back %>
+</fieldset>
 </div>
 

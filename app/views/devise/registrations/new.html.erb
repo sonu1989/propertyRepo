@@ -1,7 +1,7 @@
 <% @user.pictures.build %>
 <div style="margin-left:300px">
 <h2>Sign up</h2>
-<%= form_for(@user, :url => registration_path(@user) ,:html => {:multipart => true} ) do |f| %>
+<%= form_for(@user, :url => new_users_registration_path(@user) ,:html => {:multipart => true} ) do |f| %>
   <%= devise_error_messages! %>
   
   <div>

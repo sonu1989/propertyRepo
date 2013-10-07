@@ -1,14 +1,13 @@
 <div align=right style="margin-right:20px">
 <p class = "notice"></p> 
-  <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+  
 </div>
 <div align=left style="margin-left:20px">
   <h1>Welcome to Real Estate Explorer</h1>
 </div>
 <% if user_signed_in? %>
   <div align=right style="margin-right:20px">
-    <b><%= current_user.first_name %> <%= current_user.last_name %></b> You have Signed in as 
-    <%= current_user.user_type %>
+    
   </div>
 <% end %>
 <div align=left style="margin-left:20px">
@@ -18,7 +17,6 @@
   <%= link_to "View Property", propertydetails_path %><br/>
 </div>
 <div align=right style="width:100px;margin-right:20px">
-  <%= image_tag @user.avatar.url %>
 </div>
 
 

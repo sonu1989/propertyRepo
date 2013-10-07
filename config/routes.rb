@@ -64,7 +64,11 @@ Property::Application.routes.draw do
      end
    end
    
-   resources :propertydetails 
+   resources :propertydetails do
+     collection do
+       get :show_image
+     end
+   end
    
    root :to => 'welcomes#welcome'
 

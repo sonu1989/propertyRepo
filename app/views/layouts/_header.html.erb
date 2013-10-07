@@ -1,0 +1,39 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div align=left class="container">
+      <div class="container-fluid">
+          <nav>
+          <ul class="nav pull-left">
+            <% if user_signed_in? %>
+              <li><%= link_to "Home",    home_users_path %></li>
+            <%end%>
+            <li><%= link_to "Help",    '#' %></li>
+            <%unless user_signed_in? %>
+              <li><%= link_to "Sign in", user_session_path %></li>
+            <%end%>
+            <%unless user_signed_in? %>
+              <li><%= link_to "Sign up", user_type_welcomes_path%></li>
+            <%end%>
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
+            <%end%>
+          </ul>
+          <style>
+            .div_color {
+               color: white;
+               
+            }
+          </style>
+         <div class="div_color t" align=right style="width:800px">
+           <span class="icon-bar"><b>
+              <%unless current_user.blank?%>
+                <%= current_user.first_name %> 
+                <%= current_user.last_name %> 
+              <%end%>
+           </span>
+         </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
