@@ -11,9 +11,32 @@
  *
  *= require_self
  *= bootstrap
+ *= users.css
  *= require_tree .
  */
 .navbar-default {
     background-color: #F8F8F8;
     border-color: #E7E7E7;
 }
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #FF0000;
+  padding-right :-10px;
+  font-size: 12px;
+}
+
+.div1 {
+  margin-left: 170px;
+}
+
+.list ul li{
+  list-style:none;
+}
+
+.color_user{
+  color:#003366;
+}
+

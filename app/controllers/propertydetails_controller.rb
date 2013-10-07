@@ -1,4 +1,5 @@
 class PropertydetailsController < ApplicationController
+  before_filter :authenticate_user!
   
   def new 
     @prop=PropertyDetail.new
@@ -15,26 +16,29 @@ class PropertydetailsController < ApplicationController
       flash[:error] = @prop.errors.full_messages.join("<br/>")
     end
   end
+  
   def index
-      @prop = PropertyDetail.where(:user_id => current_user.id)
+      @prop = current_user.property_details.all
   end
   
   def show
-    @prop = PropertyDetail.find(params[:id])
+    @prop = current_user.property_details.find(params[:id])
   end
   
   def edit
-    @prop = PropertyDetail.find(params[:id])
+    @prop = current_user.property_details.find(params[:id])
   end
+  
   def update
-    @prop = PropertyDetail.find(params[:id])
+    @prop = current_user.property_details.find(params[:id])
     if @prop.update_attributes(params[:property_detail])
       flash[:notice] = "Property details has been updated successfully"
       redirect_to home_users_path
     end
   end
+  
   def destroy
-    @prop = PropertyDetail.find(params[:id])
+    @prop = current_user.property_details.find(params[:id])
     @prop.destroy
     flash[:notice] = "Record Destroyed"
     redirect_to home_users_path

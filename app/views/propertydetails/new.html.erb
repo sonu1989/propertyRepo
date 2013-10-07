@@ -1,7 +1,7 @@
 <% @prop.pictures.build %>
 <div style="margin-left:300px">
-<h2Add New Property</h2>
-<%= form_for(@prop, :url => propertydetails_path(@prop) , :method => :post, :html => {:multipart => true} ) do |f| %>
+ <h3>Add New Property</h3>
+<%= form_for(@prop, :url => propertydetails_path(@prop) , :method => :post, :validate => true, :html => {:multipart => true} ) do |f| %>
     
     <style>
    .pos label {

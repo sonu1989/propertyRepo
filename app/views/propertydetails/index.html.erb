@@ -3,19 +3,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Property Type</th>
+      <th>Type</th>
       <th>Price</th>
-      <th>Created at</th>
+      <th>Post Date</th>
     </tr>
   </thead>
   <tbody>
     <% @prop.each do |p| %>
       <tr>
-        <td><%= p.id %></td>
+        
         <td><%= p.property_type %></td>
         <td><%= p.price %></td>
-        <td><%= p.created_at %></td>
+        <td><%= p.created_at.strftime("%Y/%m/%d") %></td>
         <td>
           <%= link_to "show", propertydetail_path(p), :class => 'btn btn-success btn-min' %>
           <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-min' %>

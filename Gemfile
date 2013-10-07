@@ -8,7 +8,7 @@ gem 'devise'
 gem 'mysql2'
 gem "nested_form"
 gem "paperclip", "~> 3.0"
-
+gem 'client_side_validations' 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -38,3 +38,9 @@ gem 'jquery-rails'
 
 # To use debugger
  gem 'debugger'
+
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"

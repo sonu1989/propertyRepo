@@ -1,11 +1,11 @@
-<% @user.pictures.build %>
-<div style="margin-left:300px">
+<div style="margin-left:250px">
 <h2>Sign up</h2>
-<%= form_for(@user, :url => new_users_registration_path(@user) ,:html => {:multipart => true} ) do |f| %>
+<% @user.pictures.build %>
+<%= form_for(@user, :url => registration_path(@user) , :validate =>true, :html => {:multipart => true} ) do |f| %>
   <%= devise_error_messages! %>
   
   <div>
-    <%= f.label :first_name %>
+    <%= f.label :first_name, :validate => { :presence => true, :uniqueness => false } %>
     <%= f.text_field :first_name, :autofocus => true %>
   </div>
   
@@ -18,7 +18,7 @@
     <%= f.label :gender %>
     <%= f.select :gender, ['Male', 'Female'] %>
   </div>  
-  <div>Date of Birth<br/>
+  <div >Date of Birth<br/>
     <%= f.date_select :dob, :order => [:day, :month, :year], :start_year => 1930 %>
   </div>
   <div><%= f.label :email %>
@@ -31,7 +31,7 @@
   <%= f.password_field :password_confirmation %></div>
   
   <div><%= f.label :mobile %>
-  <%= f.text_field :mobile %></div>
+  <%= f.text_field :mobile%></div>
   
   <div><%= f.label :user_type %>
   <%= f.select :user_type, ['Seller', 'Buyer'] %>
@@ -51,12 +51,11 @@
   <div><%= f.label :zip_code %>
   <%= f.text_field :zip_code %></div>
   
-  <div><%= f.label :avatar %>
-  <%= f.file_field :avatar %></div>
   
   <%= f.fields_for :pictures do |pic_form| %>
     <%= pic_form.file_field :image %>
   <% end %>
+    
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
