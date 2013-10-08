@@ -60,7 +60,8 @@ Property::Application.routes.draw do
      collection do
        get :edit
        get :home
-       delete :destroy
+       get :buyer_home
+       get :search_property
      end
    end
    

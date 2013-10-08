@@ -2,13 +2,11 @@ class PropertydetailsController < ApplicationController
   before_filter :authenticate_user!
   
   def new 
-    @prop=PropertyDetail.new
+    @prop = PropertyDetail.new
   end
   
   def create 
-    if current_user
-      @prop=current_user.property_details.new(params[:property_detail])
-    end
+    @prop = current_user.property_details.new(params[:property_detail])
     if @prop.save
       flash[:notice] = "New Property has been created successfully"
       redirect_to home_users_path

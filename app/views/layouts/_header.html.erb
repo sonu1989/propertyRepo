@@ -16,27 +16,15 @@
             <%end%>
             <% if user_signed_in? %>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
-         
-          
             <%end%>
           </ul>
-          <style>
-            .div_color {
-               color: white;
-               
-            }
-          </style><br/>
          <div class="div_color t" align=right style="width:800px">
-          
               <%unless current_user.blank?%>
                 <%= current_user.first_name %> 
                 <%= current_user.last_name %>
-                <%=image_tag(current_user.avatar, size: "30x30")%>
+                <%=image_tag(current_user.pictures.first.image, size: "50x50", :crop => :fill, :radius => 20)%>
               <%end%>
-         
          </div>
-         
-         
         </nav>
       </div>
     </div>

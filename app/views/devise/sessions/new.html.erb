@@ -1,36 +1,6 @@
 <div align=center><br/><br/><br/>
 <h2>Sign in</h2>
-  <style>
-   .pos label {
-    position: relative;
-    left: -185px;
-    top: 28px;
-    text-align: right;
-    width: 130px;
-   }
-   .pos_remember_me label {
-    position: relative;
-    left: -40px;
-    top: -2px;
-    text-align: right;
-    width: 100px;
-   }
-   .pos_remember_me_check {
-    position: relative;
-    left: -145px;
-    top: -30px;
-    text-align: right;
-    width: 100px;
-   }
-   .pos_sign_in {
-    position: relative;
-    left: -90px;
-    top: -18px;
-    bottom: 500px;
-    text-align: right;
-    width: 100px;
-   }
-  </style>
+  
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div class="pos">
   <%= f.email_field :email, :placeholder => "Enter your email", :autofocus => true %></div>

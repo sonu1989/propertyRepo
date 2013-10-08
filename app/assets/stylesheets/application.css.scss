@@ -39,4 +39,80 @@
 .color_user{
   color:#003366;
 }
-
+.pos label {
+  position: relative;
+  left: -185px;
+  top: 28px;
+  text-align: right;
+  width: 130px;
+}
+.pos_remember_me label {
+  position: relative;
+  left: -40px;
+  top: -2px;
+  text-align: right;
+  width: 100px;
+}
+.pos_remember_me_check {
+  position: relative;
+  left: -145px;
+  top: -30px;
+  text-align: right;
+  width: 100px;
+}
+.pos_sign_in {
+  position: relative;
+  left: -90px;
+  top: -18px;
+  bottom: 500px;
+  text-align: right;
+  width: 100px;
+}
+.pos label {
+  position: relative;
+  left: -140px;
+  top: 30px;
+  text-align: right;
+  width: 130px;
+ }
+.div_color {
+ color: white;
+}
+.dob #user_dob_3i{
+ width: 50px;
+}
+.dob #user_dob_2i{
+ width: 55px;
+}
+.dob #user_dob_1i{
+ width: 75px;
+}
+.pos_forgot {
+  position: relative;
+  left: -35px;
+  top: -30px;
+  bottom: 500px;
+  text-align: right;
+  width: 150px;
+}
+.pos_sell {
+  position: relative;
+  left: -100px;
+  top: 28px;
+  text-align: right;
+  width: 150px;
+}
+ .pos_buy {
+  position: relative;
+  left: 70px;
+  top: -35px;
+  text-align: right;
+  width: 150px;
+}
+.all_page_margin {
+  margin-left:300px;
+}
+.span2{
+ background-color: #F7F7F7;
+ border: 1px solid #DDD;
+}

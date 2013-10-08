@@ -1,5 +1,4 @@
-<div style="margin-left:60px">
-  <h2>List of properties</h2>
+<h2>List of properties</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,7 +10,6 @@
   <tbody>
     <% @prop.each do |p| %>
       <tr>
-        
         <td><%= p.property_type %></td>
         <td><%= p.price %></td>
         <td><%= p.created_at.strftime("%Y/%m/%d") %></td>
@@ -24,5 +22,5 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Back', :back %>
-</div>
+<%= link_to 'Back', home_users_path, :class => 'btn btn-info btn-min' %>
+
