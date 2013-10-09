@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  min_budget: 9.99
+  max_budget: 9.99
+  property_type: MyString
+  looking_country: MyString
+  looking_city: MyString
+
+two:
+  user_id: 1
+  min_budget: 9.99
+  max_budget: 9.99
+  property_type: MyString
+  looking_country: MyString
+  looking_city: MyString

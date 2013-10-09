@@ -17,6 +17,7 @@ class PropertydetailsController < ApplicationController
   
   def index
       @prop = current_user.property_details.all
+    
   end
   
   def show

@@ -9,13 +9,4 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  
-  def buyer_home
-  
-  end
-  
-  def search_property
-    
-  end
-  
 end

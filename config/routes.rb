@@ -67,9 +67,10 @@ Property::Application.routes.draw do
    
    resources :propertydetails do
      collection do
-       get :show_image
      end
    end
+   
+   resources :buyerprofiles
    
    root :to => 'welcomes#welcome'
 

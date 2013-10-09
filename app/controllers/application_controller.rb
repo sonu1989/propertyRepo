@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.user_type == "Seller"
        home_users_path
     else
-       buyer_home_users_path
+       buyerprofiles_path
     end
   end
   

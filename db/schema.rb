@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003054520) do
+ActiveRecord::Schema.define(:version => 20131009100924) do
+
+  create_table "buyer_profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.decimal  "min_budget",      :precision => 10, :scale => 0
+    t.decimal  "max_budget",      :precision => 10, :scale => 0
+    t.string   "property_type"
+    t.string   "looking_country"
+    t.string   "looking_city"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+  end
 
   create_table "pictures", :force => true do |t|
     t.string   "image"

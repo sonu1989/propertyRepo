@@ -5,7 +5,11 @@
           <nav>
           <ul class="nav pull-left">
             <% if user_signed_in? %>
+            <% if current_user.user_type=="Seller"%>
               <li><%= link_to "Home",    home_users_path %></li>
+              <%else%>
+              <li><%= link_to "Home",    buyerprofiles_path %></li>
+              <%end%>
             <%end%>
             <li><%= link_to "Help",    '#' %></li>
             <%unless user_signed_in? %>
@@ -19,7 +23,7 @@
             <%end%>
           </ul>
          <div class="div_color t" align=right style="width:800px">
-              <%unless current_user.blank?%>
+              <%unless current_user.blank?%>Welcome!
                 <%= current_user.first_name %> 
                 <%= current_user.last_name %>
                 <%=image_tag(current_user.pictures.first.image, size: "50x50", :crop => :fill, :radius => 20)%>
