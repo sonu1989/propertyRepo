@@ -58,10 +58,7 @@ Property::Application.routes.draw do
    
    resources :users  do
      collection do
-       get :edit
        get :home
-       get :buyer_home
-       get :search_property
      end
    end
    
@@ -70,7 +67,9 @@ Property::Application.routes.draw do
      end
    end
    
-   resources :buyerprofiles
+   resources :buyerprofiles 
+   
+   resources :search_properties
    
    root :to => 'welcomes#welcome'
 

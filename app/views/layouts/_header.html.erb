@@ -2,31 +2,25 @@
   <div class="navbar-inner">
     <div align=left class="container">
       <div class="container-fluid">
-          <nav>
+       <nav>
           <ul class="nav pull-left">
             <% if user_signed_in? %>
-            <% if current_user.user_type=="Seller"%>
-              <li><%= link_to "Home",    home_users_path %></li>
+              <% if current_user.user_type== User::USER_TYPE[:seller]%>
+                <li><%= link_to "Home", home_users_path %></li>
               <%else%>
-              <li><%= link_to "Home",    buyerprofiles_path %></li>
+                <li><%= link_to "Home", buyerprofiles_path %></li>
               <%end%>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
             <%end%>
-            <li><%= link_to "Help",    '#' %></li>
             <%unless user_signed_in? %>
               <li><%= link_to "Sign in", user_session_path %></li>
-            <%end%>
-            <%unless user_signed_in? %>
               <li><%= link_to "Sign up", user_type_welcomes_path%></li>
             <%end%>
-            <% if user_signed_in? %>
-              <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
-            <%end%>
           </ul>
-         <div class="div_color t" align=right style="width:800px">
-              <%unless current_user.blank?%>Welcome!
-                <%= current_user.first_name %> 
-                <%= current_user.last_name %>
-                <%=image_tag(current_user.pictures.first.image, size: "50x50", :crop => :fill, :radius => 20)%>
+         <div class="div_color t" align="right">
+              <% unless current_user.blank? %>
+                <%= current_user.username %>
+                <%= image_tag(user_profile_image, size: "50x50", :crop => :fill, :radius => 20) %>
               <%end%>
          </div>
         </nav>

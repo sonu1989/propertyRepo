@@ -10,8 +10,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= bootstrap
- *= users.css
+ *= require bootstrap
+ *= require users
  *= require_tree .
  */
 .navbar-default {

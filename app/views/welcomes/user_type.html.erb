@@ -7,12 +7,12 @@
 <div align=center class="divTable">
   <div class="pos_sell">
     <div >I need sell a property</div>
-     <%= link_to "Sign up",new_user_registration_path , :class => 'btn btn-success btn-large'%>
+     <%= link_to "Sign up",new_user_registration_path(:type => User::USER_TYPE[:seller]) , :class => 'btn btn-success btn-large'%>
      
     </div>
   <div class="pos_buy">
     <div class="divbuy">I need buy a property</div>
-    <%= link_to "Sign up",new_user_registration_path, :class => 'btn btn-success btn-large'%>
+    <%= link_to "Sign up",new_user_registration_path(:type => User::USER_TYPE[:buyer]), :class => 'btn btn-success btn-large'%>
     </div>
 </div>
 

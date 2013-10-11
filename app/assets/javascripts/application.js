@@ -14,14 +14,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require users
+//= require jquery_validate.js
 //= require jquery_nested_form
 //= require_tree .
 
-<script type='text/javascript'>
-  var options = {
-    currentPage: 3,
-    totalPages: 10
-  }
-  $('#example').bootstrapPaginator(options);
-</script>
                

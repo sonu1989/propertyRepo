@@ -1,1 +1,49 @@
-<h3>Properties list<h3>
+<h3>Properties list</h3>
+
+<div class="row-fluid">
+  <div class="span2 span8 pull-left left_col_height">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="span3"><strong>Type</strong></div>
+        <div class="span3"><strong>Price</strong></div>
+        <div class="span3"><strong>Area</strong></div>
+        <div class="span3"><strong>City</strong></div>
+      </div>
+    <% @prop.each do |p| %> 
+      <div class="row-fluid">
+        <div class="span3"><%= link_to p.property_type, search_property_path(p)%></div>
+        <div class="span3"><%=p.price%></div>
+        <div class="span3"><%=p.area%></div>
+        <div class="span3"><%=p.city%></div>
+      </div>
+    <%end%>   
+   </div>
+  </div>
+  <%= form_for(@buyer, :url => buyerprofiles_path, :method => :post, :validate => true, :html => {:multipart => true} ) do |f| %>
+  <div class="span2 span4 left_col_height">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="span10"><strong>Search properties as your need</strong></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3"><%= f.select :property_type, ['Select Property Type','Residential', 'Commercial'] %></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3"><%= f.text_field :min_budget, :placeholder => "Yours minimum budget"%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3"><%= f.text_field :max_budget , :placeholder => "Yours maximum budget"%></div></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span5"><%= f.text_field :looking_country , :placeholder => "Looking in which country"%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span5"><%= f.text_field :looking_city , :placeholder => "Looking in which city"%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3"><%= f.submit "Proceed", :class => 'btn btn-success btn-min' %></div>
+      </div> 
+    </div>
+  </div>
+</div>
+<% end %>
