@@ -69,7 +69,17 @@ Property::Application.routes.draw do
    
    resources :buyerprofiles 
    
-   resources :search_properties
+   resources :search_properties do
+     collection do
+       post :search_property
+     end
+   end
+   
+   resources :agreements do
+     collection do
+       get :do_agreement
+     end
+   end
    
    root :to => 'welcomes#welcome'
 

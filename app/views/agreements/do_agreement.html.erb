@@ -1,0 +1,39 @@
+<h3>Aggrement</h3>
+<div class="row-fluid pull-left ">
+  <div class="span12 span2 left_col_height">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="span4"><strong>Buyer</strong></div>
+        <div class="span4"><strong>Seller</strong></div>
+        
+      </div>
+      <div class="row-fluid">
+        <div class="span4"><strong>Name:</strong> <%=current_user.first_name%> <%=current_user.last_name%></div> 
+        <div class="span4"><strong>Name:</strong> <%=@seller.first.first_name%> <%=@seller.first.last_name%></div> 
+      </div> 
+      <div class="row-fluid">
+        <div class="span4"><strong>Mobile No:</strong> <%=current_user.mobile%></div>
+        <div class="span4"><strong>Mobile No:</strong> <%=@seller.first.mobile%></div>
+      </div> 
+      <div class="row-fluid">
+        <div class="span4"><strong>City:</strong> <%=current_user.city%></div>
+        <div class="span4"><strong>City:</strong> <%=@seller.first.city%></div>
+      </div> 
+      
+      <div class="row-fluid">
+        <div class="span4"><strong>Address: </strong><%=current_user.address%></div>
+        <div class="span4"><strong>Address: </strong><%=@seller.first.address%></div>
+      </div> 
+      <div class="row-fluid">
+        <div class="span10">
+          <strong>It is declared that this agreement generated for 10 day otherwise your claim will be dismissed</strong>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4">
+           <%= link_to 'I Agree', buyerprofiles_path, :class => 'btn btn-success btn-min' %> 
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

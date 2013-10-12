@@ -6,19 +6,15 @@ class User < ActiveRecord::Base
   
   USER_TYPE = {:seller => 'Seller', :buyer => 'Buyer'} 
   DEFAULT_USER_IMAGE  = '/assets/default_user.png'  
-
+  MOBILE_MIN_SIZE = 10
+  
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :gender, :mobile, :dob, :user_type, :country, :state, :city, :address, :zip_code, :pictures_attributes
   # attr_accessible :title, :body
-  validates_presence_of :first_name
-  validates_presence_of :last_name
-  validates_presence_of :mobile
-  validates_length_of :mobile, :minimum => 10
-  validates_presence_of :city
-  validates_presence_of :country
-  validates_presence_of :state
-  validates_presence_of :address
-  validates_presence_of :zip_code
+  
+  validates_presence_of :first_name, :last_name, :mobile, :city, :country, :state, :address, :zip_code
+ 
+  validates_length_of :mobile, :minimum => MOBILE_MIN_SIZE
   
   has_many :pictures, as: :imageable
   accepts_nested_attributes_for :pictures
@@ -26,6 +22,8 @@ class User < ActiveRecord::Base
   has_many :property_details
   
   has_many :buyer_profiles
+  
+  has_many :agreements
   
   def username
     "#{self.first_name} #{self.last_name}" 

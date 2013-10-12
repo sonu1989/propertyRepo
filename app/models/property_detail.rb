@@ -5,13 +5,12 @@ class PropertyDetail < ActiveRecord::Base
   has_many :pictures, as: :imageable
   accepts_nested_attributes_for :pictures
   
+  SOLD_STATUS = {:sold => 'Sold', :not_sold => 'Not Sold'} 
+  
   belongs_to :user
   
-  validates_presence_of :area
-  validates_presence_of :city
-  validates_presence_of :country
-  validates_presence_of :price
-  validates_presence_of :state
-  validates_presence_of :address
+  has_many :agreements
+  
+  validates_presence_of :area, :city, :country, :price, :state, :address
   
 end

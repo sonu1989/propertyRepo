@@ -15,8 +15,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require users
+//= require search_property.js
 //= require jquery_validate.js
 //= require jquery_nested_form
 //= require_tree .
+
 
                

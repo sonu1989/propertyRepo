@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009100924) do
+ActiveRecord::Schema.define(:version => 20131012115612) do
+
+  create_table "agreements", :force => true do |t|
+    t.integer  "property_detail_id"
+    t.integer  "user_id"
+    t.string   "property_status"
+    t.decimal  "price",              :precision => 10, :scale => 0
+    t.string   "description"
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
 
   create_table "buyer_profiles", :force => true do |t|
     t.integer  "user_id"
