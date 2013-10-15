@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#search_form').onSubmit(function() { 
+  $('#search_form').click(function() { 
       $.ajax({
           type: 'POST',
            url: 'search_properties_path'
@@ -14,3 +14,4 @@ $(document).ready(function(){
      });
   });
 });
+

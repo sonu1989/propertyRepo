@@ -1,4 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  
- end
+  def create
+   debugger
+    RegistrationMail.registration_mail(current_user).deliver
+  end
+
+
+end 
