@@ -17,7 +17,6 @@ class PropertydetailsController < ApplicationController
   
   def index
     @prop = current_user.property_details.paginate(:page => params[:page], :per_page => 5)
-    
   end
   
   def show

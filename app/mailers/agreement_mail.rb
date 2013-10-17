@@ -1,15 +1,13 @@
 class AgreementMail < ActionMailer::Base
   default from: 'sonu@grepruby.com'
   
-  def agreement_email_seller(seller)
-    @seller = seller
-    @url  = 'http://localhost:3000/users/sign_in'
-    mail(to: @seller.last.email, subject: 'Agreement Mail')
-  end
-  def agreement_email_buyer(buyer)
-    @current_user = buyer
-    @url  = 'http://localhost:3000/users/sign_in'
-    mail(to: @current_user.email, subject: 'Agreement Mail')
+  def agreement_email(seller_id,user)
+    seller = User.find(seller_id)
+    emails = [seller.email, user.email]
+    mail({
+       :to => emails,
+       :subject => "Agreement Mail"
+     }).deliver
   end
   
 end

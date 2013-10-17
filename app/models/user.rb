@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
   def username
     "#{self.first_name} #{self.last_name}" 
   end
+  
+  def welcome_email
+    return true
+  end
 end

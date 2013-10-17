@@ -4,8 +4,8 @@
     <tr>
       <th>Type</th>
       <th>Price</th>
+      <th>Area in sqr. feet </th>
       <th>Post Date</th>
-      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +13,8 @@
       <tr>
         <td><%= p.property_type %></td>
         <td><%= p.price %></td>
+        <td><%= p.area%></td>
         <td><%= p.created_at.strftime("%Y/%m/%d") %></td>
-        <td><%= p.sold_status%></td>
         <td>
           <%= link_to "show", propertydetail_path(p), :class => 'btn btn-success btn-min' %>
           <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-min' %>

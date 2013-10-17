@@ -71,13 +71,13 @@ Property::Application.routes.draw do
    
    resources :search_properties do
      collection do
-       post :search_property
+       get :search_property
      end
    end
    
    resources :agreements do
      collection do
-       get :do_agreement
+       get :generate_agreement
      end
    end
    

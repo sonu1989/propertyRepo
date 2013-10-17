@@ -31,7 +31,7 @@
         <div class="span3"><%= @prop.address %> </div>
       </div>
       <div class="row-fluid button_block">
-        <div class="span8 "><%= link_to 'Buy', do_agreement_agreements_path(:user_id => @prop.user_id, :property_id =>@prop.id), :class => 'btn btn-success btn-min' %> </div>
+        <div class="span8 "><%= link_to 'Buy', generate_agreement_agreements_path(:user_id => @prop.user_id, :property_id =>@prop.id), :class => 'btn btn-success btn-min' %> </div>
       </div>    
     </div>
   </div>

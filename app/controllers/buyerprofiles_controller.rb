@@ -1,12 +1,12 @@
 class BuyerprofilesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:create]
+  before_filter :authenticate_user!, :only => [:new, :create]
   
   def index
   
   end
   
   def new
-    @buyer=BuyerProfile.new
+    @buyer = BuyerProfile.new
   end  
  
   def create
@@ -15,7 +15,7 @@ class BuyerprofilesController < ApplicationController
       flash[:notice] = "Your property profile created successfully"
       redirect_to buyerprofiles_path
     else
-      flash[:error] = @prop.errors.full_messages.join("<br/>")
+      flash[:error] = @buyer.errors.full_messages.join("<br/>")
     end
   end
   
