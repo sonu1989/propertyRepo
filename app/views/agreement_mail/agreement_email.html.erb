@@ -1,6 +1,68 @@
-<h1>Welcome to Real Estate Explorer,</h1>
-  Agreement generated  
-<p> 
-  To login to the site, just follow this link: <%= @url %>.
-</p>
-<p>Thanks for joining and have a great day!</p>
+<h3>Welcome to Real Estate Explorer,</h3>
+<h5>Agreement Information</h5> 
+<% if @user.user_type == User::USER_TYPE[:buyer]%>
+   <p>
+    You have claimed a property
+   </p>
+<%end%>  
+<% if @seller.user_type == User::USER_TYPE[:seller]%>
+    <h5>Buyer message:</h5>
+    <p>
+      <%= @agreement.description%>
+    </p>
+    <p>
+      Buyer wants to buy this property at Rs.<%= @agreement.price%>
+    </p>
+    <p>
+    He will contact you within 10 days otherwise his claim will be dismissed.
+    </p>
+    <div class="row-fluid pull-left ">
+      <div class="span6">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10"><strong>Your Property Deatils :#></strong></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><strong> Property Type :</strong></div>
+            <div class="span6"><%= @prop.property_type%></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><strong> Area in sq. feet :</strong></div>
+            <div class="span6"><%= @prop.area%></div>
+          </div> 
+          <div class="row-fluid">
+            <div class="span6"><strong> Price :</strong></div>
+            <div class="span6"><%= @prop.price%></div>
+          </div> 
+          <div class="row-fluid">
+            <div class="span6"><strong> Address :</strong></div>
+            <div class="span6"><%= @prop.address%></div>
+          </div>   
+        </div>
+      </div>
+      <div class="span6 ">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10"><strong>Buyer Details :#></strong></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4"><strong>Buyer Name:</strong></div>
+            <div class="span4"><%= @user.first_name%> <%= @user.last_name%></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4"><strong>Mobile No:</strong></div>
+            <div class="span4"><%= @user.mobile%></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4"><strong>Email Id:</strong></div>
+            <div class="span4"><%= @user.email%></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4"><strong>Address:</strong></div>
+            <div class="span4"><%= @user.address%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+<%end%>   
+<p><center>Thanks for joining and have a great day!</center></p>

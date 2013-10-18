@@ -75,18 +75,23 @@
   text-align: right;
   width: 130px;
  }
+ 
 .div_color {
  color: white;
 }
+
 .dob #user_dob_3i{
  width: 50px;
 }
+
 .dob #user_dob_2i{
  width: 55px;
 }
+
 .dob #user_dob_1i{
  width: 75px;
 }
+
 .pos_forgot {
   position: relative;
   left: -35px;
@@ -95,6 +100,7 @@
   text-align: right;
   width: 150px;
 }
+
 .pos_sell {
   position: relative;
   left: -100px;
@@ -102,6 +108,7 @@
   text-align: right;
   width: 150px;
 }
+
  .pos_buy {
   position: relative;
   left: 70px;
@@ -109,20 +116,30 @@
   text-align: right;
   width: 150px;
 }
+
 .all_page_margin {
   margin-left:300px;
 }
+
 .span2{
  background-color: #F7F7F7;
  border: 1px solid #DDD;
 }
+
 .left_col_height{
  min-height:400px !important;
 }
+
+.comment_div_height textarea {
+ width: 850px !important;
+ height: 60px !important;
+}
+
 .button_size {
  float: none !important;
  margin: 0 auto !important;
 }
+
 .button_block {
  display: block !important;
 }

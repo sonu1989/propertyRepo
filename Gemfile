@@ -11,6 +11,7 @@ gem "paperclip", "~> 3.0"
 gem 'client_side_validations' 
 gem 'will_paginate', '~> 3.0'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,7 +25,8 @@ group :assets do
 end
 
 gem 'bootstrap-sass', '~> 2.3.2.1'
-gem 'jquery-rails'
+
+gem "jquery-rails", "~> 2.3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,8 +43,8 @@ gem 'jquery-rails'
 # To use debugger
  gem 'debugger'
 
-group :development do
-  gem "better_errors"
-end
+#group :development do
+#  gem "better_errors"
+#end
 
-gem "binding_of_caller"
+#gem "binding_of_caller"
