@@ -7,6 +7,7 @@ gem 'devise'
 
 #gem 'mysql2'
 gem 'pg'
+gem 'heroku'
 gem "nested_form"
 gem "paperclip", "~> 3.0"
 gem 'will_paginate', '~> 3.0'
