@@ -18,7 +18,6 @@ $(document).ready(function(){
        alert("Looking city can't blank");
        return false; 
      }
-     
      $.ajax({
        type: "get",
        data: {looking_city:looking_city, min_budget:min_budget, max_budget:max_budget  },
@@ -29,3 +28,4 @@ $(document).ready(function(){
      });
    });       
 });
+

@@ -3,4 +3,6 @@ class BuyerProfile < ActiveRecord::Base
   
   belongs_to :user
   
+  validates_presence_of :looking_city, :max_budget, :min_budget
+  
 end

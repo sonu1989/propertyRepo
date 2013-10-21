@@ -5,10 +5,10 @@ gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+#gem 'mysql2'
+gem 'pg'
 gem "nested_form"
 gem "paperclip", "~> 3.0"
-gem 'client_side_validations' 
 gem 'will_paginate', '~> 3.0'
 
 

@@ -4,6 +4,8 @@ class Agreement < ActiveRecord::Base
   belongs_to :user
   belongs_to :property_detail
   
+  validates_presence_of :user_id, :seller_id, :price, :property_detail_id
+  
   after_create :agreement_email_to_seller_and_buyer
   
   def agreement_email_to_seller_and_buyer

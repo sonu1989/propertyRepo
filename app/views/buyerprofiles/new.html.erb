@@ -1,5 +1,5 @@
 <h2>We need some information from you</h2>
-<%= form_for(@buyer, :url => buyerprofiles_path(@buyer) , :method => :post, :validate => true, :html => {:multipart => true} ) do |f| %>
+<%= form_for(@buyer, :url => buyerprofiles_path(@buyer) , :method => :post,  :html => {:multipart => true} ) do |f| %>
   <div class="row-fluid">
   <div class="span12 left_col_height">
     <div class="row-fluid">
@@ -7,12 +7,12 @@
         <div class="span5"><%= f.select :property_type, ['Select Property Type','Residential', 'Commercial'] %></div>
       </div>
       <div class="row-fluid">
-        <div class="span5"><%= f.text_field :min_budget, :placeholder => "Yours minimum budget"%></div>
-        <div class="span5"><%= f.text_field :max_budget , :placeholder => "Yours maximum budget"%></div></div>
+        <div class="span5"><%= f.text_field :min_budget, :placeholder => "Yours minimum budget", :required=>"required"%></div>
+        <div class="span5"><%= f.text_field :max_budget , :placeholder => "Yours maximum budget", :required=>"required"%></div></div>
       </div>
       <div class="row-fluid">
-        <div class="span5"><%= f.text_field :looking_country , :placeholder => "Looking in which country"%></div>
-        <div class="span5"><%= f.text_field :looking_city , :placeholder => "Looking in which city"%></div>
+        <div class="span5"><%= f.text_field :looking_country , :placeholder => "Looking in which country", :required=>"required"%></div>
+        <div class="span5"><%= f.text_field :looking_city , :placeholder => "Looking in which city", :required=>"required"%></div>
       </div>
       <div class="row-fluid">
         <div class="span1"><%= f.submit "Submit", :class => 'btn btn-success btn-min' %></div>

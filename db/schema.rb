@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016124917) do
+ActiveRecord::Schema.define(:version => 20131021104428) do
 
   create_table "agreements", :force => true do |t|
     t.integer  "property_detail_id"
@@ -85,8 +85,13 @@ ActiveRecord::Schema.define(:version => 20131016124917) do
     t.string   "city"
     t.string   "address"
     t.string   "zip_code"
+    t.datetime "confirmed_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

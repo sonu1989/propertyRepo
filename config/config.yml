@@ -1,0 +1,9 @@
+development:
+  app_url: "www.google.com"
+  
+test:
+  app_url: "www.google.com"
+  
+production:
+  app_url: "www.google.com"
+  
