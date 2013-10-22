@@ -10,7 +10,7 @@
               <%else%>
                 <li><%= link_to "Home", buyerprofiles_path %></li>
               <%end%>
-                <li><%= link_to "Edit Profile",edit_user_registration_path%><li>
+                <li><%= link_to "Edit Profile",edit_user_registration_path, :method => 'put' %><li>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
             <%end%>
             <%unless user_signed_in? %>
@@ -21,7 +21,7 @@
          <div class="div_color t" align="right">
               <% unless current_user.blank? %>
                 <%= current_user.username %>
-                <%= image_tag(user_profile_image, size: "50x50", :crop => :fill, :radius => 20) %>
+                <%#= image_tag(user_profile_image, size: "50x50", :crop => :fill, :radius => 20) %>
               <%end%>
          </div>
         </nav>
