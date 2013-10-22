@@ -10,7 +10,7 @@
               <%else%>
                 <li><%= link_to "Home", buyerprofiles_path %></li>
               <%end%>
-                <li><%= link_to "Edit Profile",edit_user_registration_path, :method => 'put' %><li>
+                <li><%= link_to "Edit Profile",edit_user_registration_path %><li>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
             <%end%>
             <%unless user_signed_in? %>
@@ -18,10 +18,14 @@
               <li><%= link_to "Sign up", user_type_welcomes_path%></li>
             <%end%>
           </ul>
-         <div class="div_color t" align="right">
+          <div class="div_color t" align="right">
               <% unless current_user.blank? %>
                 <%= current_user.username %>
-                <%#= image_tag(user_profile_image, size: "50x50", :crop => :fill, :radius => 20) %>
+                <% if current_user.pictures.present? %>
+                  <%= image_tag(current_user.pictures.first.image, size: "50x50", :crop => :fill, :radius => 20) %>
+                <%else%>
+                  <%=image_tag("/assets/default_user_image.png", size: "50x50", :crop => :fill, :radius => 20)%>
+                <%end%>
               <%end%>
          </div>
         </nav>
