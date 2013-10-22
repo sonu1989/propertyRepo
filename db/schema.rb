@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021104428) do
+ActiveRecord::Schema.define(:version => 20131022125423) do
 
   create_table "agreements", :force => true do |t|
     t.integer  "property_detail_id"
-    t.integer  "user_id"
+    t.integer  "buyer_id"
     t.string   "property_status"
     t.decimal  "price",              :precision => 10, :scale => 0
     t.string   "description"

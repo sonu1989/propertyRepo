@@ -1,5 +1,5 @@
 development:
-  app_url: "www.google.com"
+  app_url: "localhost:3000"
   
 test:
   app_url: "www.google.com"

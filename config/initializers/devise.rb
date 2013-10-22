@@ -15,7 +15,7 @@ Devise.setup do |config|
   # Configure the class responsible to send e-mails.
    config.mailer = 'Devise::Mailer'
    
-   config.mailer_sender = 'info@propertyindore.herokuapp.com'
+   config.mailer_sender = 'info@localhost'
 
 
   # ==> ORM configuration

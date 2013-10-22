@@ -7,10 +7,9 @@
         <div class="span4"><strong>Seller</strong></div>
       </div>
       <%= form_for(@agreement, :url => agreements_path(@agreement), :method => :post, :html => {:multipart => true} ) do |f| %>
-        
         <%=f.hidden_field :property_detail_id, :value => params[:property_id]%>
-        <%=f.hidden_field :user_id, :value => current_user.id%>
-        <%=f.hidden_field :seller_id, :value => @seller.id%>
+        <%=f.hidden_field :buyer_id, :value => current_user.id%>
+        <%=f.hidden_field :seller_id, :value => params[:seller_id]%>
         <%=f.hidden_field :property_status, :value => "Claimed"%>
         
         <div class="row-fluid">

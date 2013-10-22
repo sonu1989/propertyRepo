@@ -4,7 +4,7 @@ class AgreementsController < ApplicationController
   def generate_agreement
     @agreement = Agreement.new
     @prop = PropertyDetail.find(params[:property_id])
-    @seller = User.find(params[:user_id])
+    @seller = User.find(params[:seller_id])
   end
   
   def create
