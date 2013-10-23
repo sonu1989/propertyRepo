@@ -1,29 +1,24 @@
 <h2>List of properties</h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Price</th>
-      <th>Area in sqr. feet </th>
-      <th>Post Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @prop.each do |p| %>
-      <tr>
-        <td><%= p.property_type %></td>
-        <td><%= p.price %></td>
-        <td><%= p.area%></td>
-        <td><%= p.created_at.strftime("%Y/%m/%d") %></td>
-        <td>
-          <%= link_to "show", propertydetail_path(p), :class => 'btn btn-success btn-min' %>
-          <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-min' %>
-          <%= link_to 'Destroy', propertydetail_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-min' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="span2 span12 left_col_height">
+    <div class="row-fluid">
+    <div class="row-fluid">
+      <div class="span3"><strong>Type</strong></div>
+      <div class="span3"><strong>Price</strong></div>
+      <div class="span3"><strong>Post Date</strong></div>
+    </div>
+  <%@prop.each do |p| %> 
+    <div class="row-fluid">
+      <div class="span3"><%= link_to p.property_type, propertydetail_path(p)%></div>
+      <div class="span3"><%= p.price%></div>
+      <div class="span3"><%= p.created_at.strftime("%Y/%m/%d") %></div>
+      <div class="span3">
+        <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-small' %>
+        <%= link_to 'Destroy', propertydetail_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-small' %>
+      </div>
+    </div>
+  <%end%>   
+</div>
 <%= will_paginate @prop %>
 <%= link_to 'Back', home_users_path, :class => 'btn btn-info btn-min' %>
 

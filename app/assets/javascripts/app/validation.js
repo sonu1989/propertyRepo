@@ -30,16 +30,25 @@ $("#new_property_detail").validate({
   }
 });
 
+$("#new_agreement").validate({
+  rules:{
+    price: "required"
+  },
+  messages: {
+    price: "Please enter property price",
+  }
+});
+
 
 $("#new_user").validate({
   rules:{
     first_name: {
       required: true,
-      minlength: 2
+      min: 2
     },
     last_name: {
       required: true,
-      minlength: 2
+      min: 2
     },
     email: {
       required: true,
@@ -47,7 +56,8 @@ $("#new_user").validate({
     },
     mobile: {
       required: true,
-      number: true
+      number: true,
+      max: 10
     },
     password: "required",
     password_confirmation: "required",
@@ -71,4 +81,19 @@ $("#new_user").validate({
   }
 });
 
-
+$("#new_user").ready(function(){
+  $("#signup_btn").click(function () {
+    
+      });
+    $("#user_mobile").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,10})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
+      }
+    });
+     $("#user_zip_code").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,6})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,6);
+      }
+  
+  });
+});

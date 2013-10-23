@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 <% @user.pictures.build %>
-<%= form_for(@user, :id => "signup_form", :url => registration_path(@user), :method => :post, :html => {:multipart => true} ) do |f| %>
+<%= form_for(@user, :url => registration_path(@user), :method => :post, :html => {:multipart => true} ) do |f| %>
   <%= devise_error_messages! %>
   <div class="row-fluid">
     <div class="span10 ">
@@ -43,8 +43,9 @@
           <div class="row-fluid">
             <div class="span1 registration_new_btn"> <%= f.submit "Sign up" , :class => 'btn btn-success btn-min', :id =>"signup_btn" %></div>
           </div>  
-       </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 <% end %>
 
