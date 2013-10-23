@@ -82,9 +82,6 @@ $("#new_user").validate({
 });
 
 $("#new_user").ready(function(){
-  $("#signup_btn").click(function () {
-    
-      });
     $("#user_mobile").keyup(function () {
        if (!this.value.match(/^([0-9]{0,10})$/)) {
           this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
@@ -97,3 +94,33 @@ $("#new_user").ready(function(){
   
   });
 });
+
+$("#new_property_detail").ready(function(){
+    $("#property_detail_area").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,10})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
+      }
+    });
+     $("#property_detail_price").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,12})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,12);
+      }
+  
+  });
+});
+
+$("#new_buyer_profile").ready(function(){
+    $("#buyer_profile_min_budget").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,10})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
+      }
+    });
+     $("#buyer_profile_max_budget").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,10})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
+      }
+  
+  });
+});
+
+

@@ -13,13 +13,17 @@
         <%=f.hidden_field :property_status, :value => "Claimed"%>
         
         <div class="row-fluid">
-          <div class="span4"><strong>Name:</strong> <%=current_user.first_name%> <%=current_user.last_name%><%=current_user.id%></div> 
-          <div class="span4"><strong>Name:</strong> <%=@seller.first_name%> <%=@seller.last_name%><%=@seller.id%></div> 
+          <div class="span4"><strong>Name:</strong> <%=current_user.first_name%> <%=current_user.last_name%></div> 
+          <div class="span4"><strong>Name:</strong> <%=@seller.first_name%> <%=@seller.last_name%></div> 
         </div> 
         <div class="row-fluid">
           <div class="span4"><strong>Mobile No:</strong> <%=current_user.mobile%></div>
           <div class="span4"><strong>Mobile No:</strong> <%=@seller.mobile%></div>
-        </div> 
+        </div>
+        <div class="row-fluid">
+          <div class="span4"><strong>Email:</strong> <%=current_user.email%></div>
+          <div class="span4"><strong>Email:</strong> <%=@seller.email%></div>
+        </div>  
         <div class="row-fluid">
           <div class="span4"><strong>City:</strong> <%=current_user.city%></div>
           <div class="span4"><strong>City:</strong> <%=@seller.city%></div>
