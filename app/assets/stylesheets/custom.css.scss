@@ -134,26 +134,36 @@ footer ul li {
   margin-left:300px;
 }
 
-.span2{
- background-color: #F7F7F7;
- border: 1px solid #DDD;
+.border_and_background{
+  background-color: #F7F7F7;
+  border: 1px solid #DDD;
 }
 
 .left_col_height{
- min-height:400px !important;
+  min-height:400px !important;
 }
 
 .comment_div_height textarea {
- width: 850px !important;
- height: 60px !important;
+  width: 850px !important;
+  height: 60px !important;
 }
 
 .button_size {
- float: none !important;
- margin: 0 auto !important;
+  float: none !important;
+  margin: 0 auto !important;
 }
 
 .button_block {
- display: block !important;
+  display: block !important;
+}
+.margin_left {
+  margin-left:8px !important;
+}
+.margin_top {
+ margin-top:270px !important;
+}
+
+margin_left_edit_user{
+ margin-left:80px !important;
 }
 

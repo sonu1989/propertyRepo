@@ -13,4 +13,10 @@ class PropertyDetail < ActiveRecord::Base
     
   scope :property_by_city_and_budget, lambda {|city, min_budget, max_budget| where(:city => city, :price => min_budget.to_i .. max_budget.to_i)}
   
+  after_create :new_property_registration_mail_to_buyer
+  
+  def new_property_registration_mail_to_buyer
+    NewPropertyRegistrationMail.new_property_registration_email(self)
+  end
+  
 end

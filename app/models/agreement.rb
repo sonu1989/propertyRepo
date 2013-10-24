@@ -9,7 +9,7 @@ class Agreement < ActiveRecord::Base
   after_create :agreement_email_to_seller_and_buyer
   
   def agreement_email_to_seller_and_buyer
-    AgreementMail.agreement_email(self.seller_id,buyer_id,property_detail)
+    AgreementMail.agreement_email(self)
   end
   
 end

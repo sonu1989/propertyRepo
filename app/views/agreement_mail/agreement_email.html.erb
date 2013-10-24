@@ -8,10 +8,10 @@
 <% if @seller.user_type == User::USER_TYPE[:seller]%>
     <h5>Buyer message:</h5>
     <p>
-    <%=@agreement.last.description%>
+    <%=@agreement.description%>
     </p>
     <p>-----------------------------------------------------</p>
-    <h5>Buyer wants to give <%=@agreement.last.price%> Rs. to this property</h5>
+    <h5>Buyer wants to give <%=@agreement.price%> Rs. to this property</h5>
     <p>-----------------------------------------------------</p>
     <p>
     He will contact you within 10 days otherwise his claim will be dismissed.

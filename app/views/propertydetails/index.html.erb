@@ -1,24 +1,33 @@
 <h2>List of properties</h2>
 
-<div class="span2 span12 left_col_height">
-    <div class="row-fluid">
-    <div class="row-fluid">
-      <div class="span3"><strong>Type</strong></div>
-      <div class="span3"><strong>Price</strong></div>
-      <div class="span3"><strong>Post Date</strong></div>
-    </div>
-  <%@prop.each do |p| %> 
-    <div class="row-fluid">
-      <div class="span3"><%= link_to p.property_type, propertydetail_path(p)%></div>
-      <div class="span3"><%= p.price%></div>
-      <div class="span3"><%= p.created_at.strftime("%Y/%m/%d") %></div>
-      <div class="span3">
-        <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-small' %>
-        <%= link_to 'Destroy', propertydetail_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-small' %>
+<div class="border_and_background span12 left_col_height">
+    <div class="row-fluid margin_left">
+      <div class="row-fluid">
+        <div class="span3"><strong>Type</strong></div>
+        <div class="span3"><strong>Price</strong></div>
+        <div class="span3"><strong>Post Date</strong></div>
+      </div>
+      <%@prop.each do |p| %> 
+        <div class="row-fluid">
+          <div class="span3"><%= link_to p.property_type, propertydetail_path(p)%></div>
+          <div class="span3"><%= p.price%></div>
+          <div class="span3"><%= p.created_at.strftime("%Y/%m/%d") %></div>
+          <div class="span3">
+            <%= link_to 'Edit', edit_propertydetail_path(p), :class => 'btn btn-primary btn-small' %>
+            <%= link_to 'Destroy', propertydetail_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-small' %>
+          </div>
+        </div>
+      <%end%> 
+      <div class="row-fluid">
+        <div class="span3">
+         <%= will_paginate @prop %>
+        </div>  
+      </div>
+      <div class="row-fluid">
+        <div class="span3 margin_top">
+         <%= link_to 'Back', home_users_path, :class => 'btn btn-info btn-min' %>
+        </div>  
       </div>
     </div>
-  <%end%>   
-</div>
-<%= will_paginate @prop %>
-<%= link_to 'Back', home_users_path, :class => 'btn btn-info btn-min' %>
+  </div>
 

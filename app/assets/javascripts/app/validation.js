@@ -122,5 +122,12 @@ $("#new_buyer_profile").ready(function(){
   
   });
 });
+$("#new_agreement").ready(function(){
+    $("#agreement_price").keyup(function () {
+       if (!this.value.match(/^([0-9]{0,10})$/)) {
+          this.value = this.value.replace(/[^0-9]/g, '').substring(0,10);
+      }
+    });
+});
 
 

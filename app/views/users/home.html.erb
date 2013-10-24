@@ -1,7 +1,7 @@
 <p class = "notice"></p> 
 <div class="row-fluid">
-  <div class="span3 span2 left_col_height">
-    <div class="row-fluid">
+  <div class="span3 border_and_background left_col_height">
+    <div class="row-fluid margin_left">
       <div class="row-fluid">
         <div class="span12"><%= link_to "Post new Property",new_propertydetail_path(:status => PropertyDetail::SOLD_STATUS[:not_sold])%></div>
       </div>  
@@ -10,8 +10,8 @@
       </div>  
     </div>
   </div>
-  <div class="span9 span2 left_col_height"> 
-    <div class="row-fluid">
+  <div class="span9 border_and_background left_col_height"> 
+    <div class="row-fluid margin_left">
       <div class="row-fluid">
         <div class="span6"><strong>Number of posted property is/are : <%= current_user.property_details.count %></strong></div>
       </div>
