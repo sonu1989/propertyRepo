@@ -84,7 +84,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.2)
-    mysql2 (0.3.13)
     nested_form (0.3.2)
     netrc (0.7.7)
     orm_adapter (0.4.0)
@@ -93,6 +92,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
+    pg (0.17.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -157,9 +157,9 @@ DEPENDENCIES
   devise
   heroku
   jquery-rails (~> 2.3.0)
-  mysql2
   nested_form
   paperclip (~> 3.0)
+  pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
