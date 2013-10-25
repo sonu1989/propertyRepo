@@ -4,18 +4,11 @@
       <div class="container-fluid">
        <nav>
           <ul class="nav pull-left">
-            
             <% if user_signed_in? %>
-              <% if current_user.user_type== User::USER_TYPE[:seller]%>
-                <li><%= link_to "Home", home_users_path %></li>
-                <%else%>
-                  <li><%= link_to "Home", buyerprofiles_path %></li>
-              <%end%>
-                <li><%= link_to "Edit Profile", edit_user_registration_path%><li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
-             <%end%>
-            
-            <%unless user_signed_in? %>
+              <li><%= link_to "Home", home_users_path %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path%><li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %><li>
+             <%else%>
               <li><%= link_to "Sign in", user_session_path %></li>
               <li><%= link_to "Sign up", user_type_welcomes_path%></li>
             <%end%>
@@ -23,11 +16,7 @@
           <div class="div_color t" align="right">
               <% unless current_user.blank? %>
                 <%= current_user.username %>
-                <% if current_user.pictures.present? %>
-                  <%= image_tag(current_user.pictures.first.image, size: "50x50", :crop => :fill, :radius => 20) %>
-                <%else%>
-                  <%=image_tag("/assets/default_user_image.png", size: "50x50", :crop => :fill, :radius => 20)%>
-                <%end%>
+                  <%= image_tag(user_profile_image, size: "50x50", :crop => :fill, :radius => 20) %>
               <%end%>
          </div>
         </nav>

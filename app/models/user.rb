@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
   USER_TYPE = {:seller => 'Seller', :buyer => 'Buyer'} 
-  DEFAULT_USER_IMAGE  = '/assets/default_user.png'  
+  DEFAULT_USER_IMAGE  = "/assets/default_user_image.png"
   MOBILE_MIN_SIZE = 10
   
   # Setup accessible (or protected) attributes for your model
@@ -27,9 +27,5 @@ class User < ActiveRecord::Base
   
   def username
     "#{self.first_name} #{self.last_name}" 
-  end
-  
-  def welcome_email
-    return true
   end
 end

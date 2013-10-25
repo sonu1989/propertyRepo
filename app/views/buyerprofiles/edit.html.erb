@@ -6,7 +6,8 @@
         <div class="row-fluid">
           <div class="span6 pos">
             <%= f.label :property_type %>
-            <%= f.select(:property_type, options_for_select([['Residential', 'Residential'], ['Commercial', 'Commercial']] , :selected => params[:property_type])) %>
+            <%= f.select(:property_type, options_for_select([[PropertyDetail::PROPERTY_TYPE["residential"], 'Residential'], 
+            [PropertyDetail::PROPERTY_TYPE["commercial"], 'Commercial']] , :selected => params[:property_type])) %>
           </div>
         </div>
         

@@ -28,16 +28,16 @@ class PropertydetailsController < ApplicationController
   end
   
   def update
-    @prop = current_user.property_details.find(params[:id])
-    if @prop.update_attributes(params[:property_detail])
+    prop = current_user.property_details.find(params[:id])
+    if prop.update_attributes(params[:property_detail])
       flash[:notice] = "Property details has been updated successfully"
       redirect_to home_users_path
     end
   end
   
   def destroy
-    @prop = current_user.property_details.find(params[:id])
-    @prop.destroy
+    prop = current_user.property_details.find(params[:id])
+    sprop.destroy
     flash[:notice] = "Record Destroyed"
     redirect_to home_users_path
   end

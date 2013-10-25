@@ -8,14 +8,15 @@ Property::Application.configure do
   
   Paperclip.options[:command_path] = "/usr/local/bin/"
   
-  #config.action_mailer.default_url_options = { :host => "localhost:3000" }
-  
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
+  
+  config.action_mailer.default_url_options = { :host => APP_CONFIG["development"]["app_url"]}
   
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
+
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = true

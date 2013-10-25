@@ -1,10 +1,6 @@
 class BuyerprofilesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create]
-  
-  def index
-  
-  end
-  
+  before_filter :authenticate_user!
+
   def show
     @buyer = buyer_profiles_info
   end
@@ -15,10 +11,9 @@ class BuyerprofilesController < ApplicationController
  
   def create
     @buyer = current_user.buyer_profiles.new(params[:buyer_profile])
-
     if @buyer.save
       flash[:notice] = "Your property profile created successfully"
-      redirect_to buyerprofiles_path
+      redirect_to home_users_path
     else
       flash[:error] = @buyer.errors.full_messages.join("<br/>")
     end
@@ -32,7 +27,7 @@ class BuyerprofilesController < ApplicationController
     buyer = buyer_profiles_info
     if buyer.update_attributes(params[:buyer_profile])
       flash[:notice] = "Your property profile updated successfully"
-      redirect_to buyerprofiles_path
+      redirect_to home_users_path
     end
   end
   

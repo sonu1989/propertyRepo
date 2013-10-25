@@ -35,11 +35,7 @@
   <div class="span4"> 
     <div class="row-fluid">
       <div class="row-fluid">
-        <% if @prop.pictures.present? %>
-          <div class="span8"><%= image_tag(@prop.pictures.first.image, size: "200x200") %></div>
-        <%else%>
-          <%=image_tag("/assets/default_property_image.png", size: "200x200")%>
-        <%end%>
+        <div class="span8"><%= image_tag(property_image(@prop), size: "200x200") %></div>
       </div>  
     </div>  
   </div>

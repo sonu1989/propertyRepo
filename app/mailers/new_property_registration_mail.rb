@@ -1,7 +1,7 @@
 class NewPropertyRegistrationMail < ActionMailer::Base
-  default from: 'sonu@grepruby.com'
-  
-  def new_property_registration_email(property)
+  default from: APP_CONFIG["development"]["default_email"]
+  default from: APP_CONFIG["production"]["default_email"]
+  def new_property_registration_mail(property)
     @property = property
     buyer_profiles = property.user.buyer_profiles
     @buyer = buyer_profiles.where(:looking_city => property.user.city).user if buyer_profiles.present?

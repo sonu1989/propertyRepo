@@ -11,10 +11,9 @@ Property::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
   # I added this code
-  #config.action_mailer.default_url_options = { :host => "localhost:3000" }
-
+  config.action_mailer.default_url_options = { :host => APP_CONFIG["production"]["app_url"]}
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'propertyindore.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => APP_CONFIG["production"]["app_url"]}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -22,9 +21,9 @@ Property::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'propertyindore.herokuapp.com',
-    :user_name            => 'propertyindoremail@gmail.com',
-    :password             => 'property@2013',
+    :domain               => APP_CONFIG["production"]["app_url"],
+    :user_name            => APP_CONFIG["production"]["username"],
+    :password             => APP_CONFIG["production"]["password"],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
     

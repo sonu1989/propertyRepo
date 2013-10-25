@@ -2,26 +2,36 @@
 <div class="row-fluid">
   <div class="span3 border_and_background left_col_height">
     <div class="row-fluid margin_left">
-      <div class="row-fluid">
-        <div class="span12"><%= link_to "Post new Property",new_propertydetail_path(:status => PropertyDetail::SOLD_STATUS[:not_sold])%></div>
-      </div>  
-      <div class="row-fluid">
-        <div class="span12"><%= link_to "View Property", propertydetails_path %></div>
-      </div>  
+      <%if current_user.user_type == User::USER_TYPE[:seller]%>
+        <div class="row-fluid">
+          <div class="span12"><%= link_to "Post new Property",new_propertydetail_path(:status => PropertyDetail::SOLD_STATUS[:not_sold])%></div>
+        </div>  
+        <div class="row-fluid">
+          <div class="span12"><%= link_to "View Property", propertydetails_path %></div>
+        </div>  
+      <%else%>
+        <div class="row-fluid">
+          <div class="span12"><%= link_to "Search Property",search_properties_path%></div>
+        </div>  
+        <div class="row-fluid">
+          <div class="span12"><%= link_to "Create Property Profile", new_buyerprofile_path %></div>
+        </div> 
+        <div class="row-fluid">
+          <div class="span12"><%= link_to "View Property Profile", "" %></div>
+        </div>
+      <%end%> 
     </div>
   </div>
+  
   <div class="span9 border_and_background left_col_height"> 
     <div class="row-fluid margin_left">
-      <div class="row-fluid">
-        <div class="span6"><strong>Number of posted property is/are : <%= current_user.property_details.count %></strong></div>
-      </div>
       <div class="row-fluid">
         <div class="span3"><strong>User Type:</strong></div>
         <div class="span6"><%= current_user.user_type %></div>
       </div>  
       <div class="row-fluid">
         <div class="span3"><strong>Name:</strong></div>
-        <div class="span6"><%= current_user.first_name %> <%= current_user.last_name %></div>
+        <div class="span6"><%= current_user.username %></div>
       </div>
       <div class="row-fluid">
         <div class="span3"><strong>Mobile No:</strong></div>
@@ -57,4 +67,5 @@
       </div> 
     </div>  
   </div>
+  
 </div>

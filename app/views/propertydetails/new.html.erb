@@ -5,7 +5,7 @@
     <div class="span10">
       <div class="row-fluid">
         <div class="row-fluid">
-          <div class="span5"><%= f.select :property_type, ['Select Property Type','Residential', 'Commercial'] %></div>
+          <div class="span5"><%= f.select :property_type, ['Select Property Type',[PropertyDetail::PROPERTY_TYPE["residential"], 'Residential'], [PropertyDetail::PROPERTY_TYPE["commercial"], 'Commercial']] %></div>
           <div class="span5"><%= f.text_field :area, :placeholder => "Enter area", :required =>"required" %>(in sqr. feet)</div>
         </div>
         <div class="row-fluid">

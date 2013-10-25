@@ -1,7 +1,7 @@
 <h2>We need some information from you</h2>
 <%= form_for(@buyer, :url => buyerprofiles_path(@buyer) , :method => :post,  :html => {:multipart => true} ) do |f| %>
   <div class="row-fluid">
-  <div class="span12 left_col_height">
+  <div class="span12 left_col_height border_and_background">
     <div class="row-fluid">
       <div class="row-fluid">
         <div class="span5"><%= f.select :property_type, ['Select Property Type','Residential', 'Commercial'] %></div>
