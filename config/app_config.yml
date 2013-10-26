@@ -3,7 +3,7 @@ development:
   default_email: propertyindoremail@gmail.com
   
 production:
-  app_url: http://propertyindore.herokuapp.com
+  app_url: propertyindore.herokuapp.com
   default_email: propertyindoremail@gmail.com
   username: propertyindoremail@gmail.com
   password: property@2013
