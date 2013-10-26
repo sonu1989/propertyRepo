@@ -17,7 +17,9 @@
           <div class="span12"><%= link_to "Create Property Profile", new_buyerprofile_path %></div>
         </div> 
         <div class="row-fluid">
-          <div class="span12"><%= link_to "View Property Profile", "#"%></div>
+          <% if current_user.buyer_profiles.present? %>
+          <div class="span12"><%= link_to "View Property Profile", buyerprofile_path(current_user.buyer_profiles.last.id)%></div>
+          <%end%>
         </div>
       <%end%> 
     </div>
