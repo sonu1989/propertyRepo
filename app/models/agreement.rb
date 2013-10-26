@@ -6,10 +6,15 @@ class Agreement < ActiveRecord::Base
   
   validates_presence_of :buyer_id, :seller_id, :price, :property_detail_id
   
-  after_create :agreement_email_to_seller_and_buyer
+  after_create :agreement_email_to_seller
   
-  def agreement_email_to_seller_and_buyer
-    AgreementMail.agreement_email(self)
+  after_create :agreement_email_to_buyer
+  
+  def agreement_email_to_seller
+    AgreementMail.agreement_mail_to_seller(self).deliver
   end
   
+  def agreement_email_to_buyer
+    AgreementMail.agreement_mail_to_buyer(self).deliver
+  end
 end

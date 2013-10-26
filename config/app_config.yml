@@ -1,0 +1,11 @@
+development:
+  app_url: localhost:3000
+  default_email: propertyindoremail@gmail.com
+  
+production:
+  app_url: http://propertyindore.herokuapp.com
+  default_email: propertyindoremail@gmail.com
+  username: propertyindoremail@gmail.com
+  password: property@2013
+ 
+  

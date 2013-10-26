@@ -1,0 +1,57 @@
+<h3>Welcome to Real Estate Explorer,</h3>
+<h5>Agreement Information</h5> 
+<h5>Buyer message:</h5>
+<p><%=@agreement.description%></p>
+<p>-----------------------------------------------------</p>
+<h5>Buyer wants to give <%=@agreement.price%> Rs. to this property</h5>
+<p>-----------------------------------------------------</p>
+<p>He will contact you within 10 days otherwise his claim will be dismissed.</p>
+<div class="row-fluid pull-left ">
+  <div class="span6">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="span10"><strong>Your Property Deatils:</strong></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span6"><strong> Property Type :</strong></div>
+        <div class="span6"><%= @prop.property_type%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span6"><strong> Area in sq. feet :</strong></div>
+        <div class="span6"><%= @prop.area%></div>
+      </div> 
+      <div class="row-fluid">
+        <div class="span6"><strong> Price :</strong></div>
+        <div class="span6"><%= @prop.price%></div>
+      </div> 
+      <div class="row-fluid">
+        <div class="span6"><strong> Address :</strong></div>
+        <div class="span6"><%= @prop.address%></div>
+      </div>   
+    </div>
+  </div>
+  <div class="span6 ">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="span10"><strong>Buyer Details:</strong></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4"><strong>Buyer Name:</strong></div>
+        <div class="span4"><%= @buyer.first_name%> <%= @buyer.last_name%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4"><strong>Mobile No:</strong></div>
+        <div class="span4"><%= @buyer.mobile%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4"><strong>Email Id:</strong></div>
+        <div class="span4"><%= @buyer.email%></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4"><strong>Address:</strong></div>
+        <div class="span4"><%= @buyer.address%></div>
+      </div>
+    </div>
+  </div>
+</div> 
+<p><center>Thanks for joining and have a great day!</center></p>

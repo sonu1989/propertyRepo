@@ -5,4 +5,10 @@ class BuyerProfile < ActiveRecord::Base
   
   validates_presence_of :looking_city, :max_budget, :min_budget
   
+  after_create :property_notfication
+  
+  def property_notfication
+    PropertyNotifier.property_notfication_mail(self).deliver
+  end
+  
 end

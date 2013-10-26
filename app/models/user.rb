@@ -16,14 +16,14 @@ class User < ActiveRecord::Base
  
   validates_length_of :mobile, :minimum => MOBILE_MIN_SIZE
   
-  has_many :pictures, as: :imageable
+  has_many :pictures, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :pictures
   
   has_many :property_details, dependent: :destroy
   
-  has_many :buyer_profiles
+  has_many :buyer_profiles, dependent: :destroy
   
-  has_many :agreements
+  has_many :agreements, dependent: :destroy
   
   def username
     "#{self.first_name} #{self.last_name}" 
