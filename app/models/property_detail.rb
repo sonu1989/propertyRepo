@@ -20,6 +20,8 @@ class PropertyDetail < ActiveRecord::Base
     
   scope :property_by_city_and_budget, lambda {|city, min_budget, max_budget| where(:city => city, :price => min_budget.to_i .. max_budget.to_i)}
   
-  
-  
+  def self.property_count_by_city_and_budget(city, min_budget, max_budget)
+    PropertyDetail.where(:city =>city, :price => min_budget .. max_budget).count
+  end 
+   
 end

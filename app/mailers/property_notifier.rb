@@ -4,7 +4,7 @@ class PropertyNotifier < ActionMailer::Base
   
   def property_notfication_mail(buyer)
     @buyer = buyer.user
-    @property_count = PropertyDetail.where(:city =>buyer.looking_city, :price => buyer.min_budget .. buyer.max_budget).count
+    @property_count = PropertyDetail.property_count_by_city_and_budget(buyer.looking_city, buyer.min_budget, buyer.max_budget)
     if @buyer.present?
       mail({
          :to => @buyer.email,
