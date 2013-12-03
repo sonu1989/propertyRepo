@@ -5,8 +5,11 @@ gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2'
-gem 'pg'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.5.1'
+gem 'omniauth-google-oauth2'
+gem 'mysql2'
+#gem 'pg'
 gem 'heroku'
 gem "nested_form"
 gem "paperclip", "~> 3.0"

@@ -8,7 +8,11 @@
 </head>
 <body><br/><br/><br/>
   <%= render 'layouts/header' %>
+  
   <div class="container">
+    <%= link_to image_tag('facebook_logo_50x50.png', size: "30x30"), user_omniauth_authorize_path(:facebook) %>
+    <%= link_to image_tag('google.png', size: "30x30"), user_omniauth_authorize_path(:google_oauth2) %>
+    <%= link_to image_tag('Twitter-icon-50x50.png', size: "30x30"), "" %>
     <%= render :partial => 'layouts/flash_messages' %>
     <%= yield %>
     <%= render 'layouts/footer' %>

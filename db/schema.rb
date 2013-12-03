@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131022125423) do
+ActiveRecord::Schema.define(:version => 20131203060701) do
 
   create_table "agreements", :force => true do |t|
     t.integer  "property_detail_id"
@@ -89,6 +89,10 @@ ActiveRecord::Schema.define(:version => 20131022125423) do
     t.string   "confirmation_token"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
