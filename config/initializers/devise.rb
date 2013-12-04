@@ -18,11 +18,16 @@ Devise.setup do |config|
    config.mailer_sender = 'info@localhost'
 
   require "omniauth-facebook"
-  #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
   config.omniauth :facebook, "233342813508772", "ea59bc4ac31973ff2f7db0c334c53fae"#, :strategy_class => OmniAuth::Strategies::Facebook
   
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, "280045303567-4p9t3qpo325kavjhdiof8sg662ebhjcn.apps.googleusercontent.com", "oQRuX-7AHGirw5wRQmiqrq-K", { access_type: "offline", approval_prompt: "" }
+
+  require "omniauth-github"
+  config.omniauth :github, "73b47d49919fb0657e24", "a25aabaed11d2717076ab634f0c1ec8346c510f6", :scope => 'user,propertyRepo'
+  
+  require "omniauth-twitter"
+  config.omniauth :twitter, "KupmkwHk9sysRugVSUu4Xg", "JMy0T12F82DZg7E8bp1j24PLHBz6a6Q0XhSSjRoAvGI"
   
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and

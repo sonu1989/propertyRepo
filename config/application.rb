@@ -1,4 +1,5 @@
 require 'yaml'  
+require 'omniauth'
 
 APP_CONFIG = YAML.load(File.read(File.expand_path('../app_config.yml', __FILE__)))  
 
