@@ -70,12 +70,12 @@ class User < ActiveRecord::Base
   end
   
   def self.find_for_twitter_auth(access_token, signed_in_resource=nil)
+    debugger
     data = access_token.info
-    user = User.where(:email => data["email"]).first
-
+    user = User.where(:uid => data["uid"]).first if data["uid"].present?
     unless user
-        user = User.create(first_name: data["name"],
-             email: data["email"],
+        user = User.create(uid: data["uid"],
+             email: data["uid"],
              password: Devise.friendly_token[0,20]
             )
     end
