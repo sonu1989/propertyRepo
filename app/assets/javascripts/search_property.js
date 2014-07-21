@@ -26,6 +26,25 @@ $(document).ready(function(){
          $('.search_form').html(data);
          }
      });
-   });       
-});
+   });
 
+  $("#seach_property").autocomplete({
+      source: function(request, response) {
+        return $.ajax({
+          url: "/search_properties/search_property_by_city",
+          dataType: "json",
+          data: {
+            city: request.term
+          },
+          success: function(data) {
+            return response($.map(data, function(item) {
+              return {
+                label: item.address,
+                value: item.address
+              };
+            }));
+          }
+        });
+      }
+    });       
+});

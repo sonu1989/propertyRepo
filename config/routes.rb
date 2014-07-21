@@ -1,7 +1,7 @@
 Property::Application.routes.draw do
   #devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
- 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,34 +56,35 @@ Property::Application.routes.draw do
        get :user_type
      end
    end
-   
+
    resources :users  do
      collection do
        get :home
      end
    end
-   
+
    resources :propertydetails do
      collection do
      end
    end
-   
-   resources :buyerprofiles 
-   
+
+   resources :buyerprofiles
+
    resources :search_properties do
      collection do
        get :search_property
+       get :search_property_by_city
      end
    end
-   
+
    resources :agreements do
      collection do
        get :generate_agreement
      end
    end
-   
+
    root :to => 'welcomes#welcome'
-   
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

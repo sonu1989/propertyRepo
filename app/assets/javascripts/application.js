@@ -13,10 +13,11 @@
 //
 //= require jquery
 //= require bootstrap
-//= require angular
+// require angular
 //= require angular.min
 //= require validation
 //= require search_property
 //= require jquery_ujs
+//= require jquery-ui
 
 
