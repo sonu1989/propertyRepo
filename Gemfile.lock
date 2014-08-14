@@ -46,22 +46,21 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    columnize (0.3.6)
-    debugger (1.6.3)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.4)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.4)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     excon (0.25.3)
     execjs (2.0.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     hashie (2.0.5)
@@ -155,6 +154,22 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rspec-core (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.3)
     rubyzip (1.1.0)
     sass (3.2.12)
     sass-rails (3.2.6)
@@ -187,8 +202,8 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.3.2.1)
   coffee-rails (~> 3.2.1)
-  debugger
   devise
+  factory_girl_rails
   heroku
   jquery-rails (~> 2.3.0)
   mysql2
@@ -200,6 +215,7 @@ DEPENDENCIES
   omniauth-twitter
   paperclip (~> 3.0)
   rails (= 3.2.13)
+  rspec-rails
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0)

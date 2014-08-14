@@ -48,10 +48,12 @@ gem "jquery-rails", "~> 2.3.0"
 # gem 'capistrano'
 
 # To use debugger
- gem 'debugger'
+# gem 'debugger'
 
 #group :development do
 #  gem "better_errors"
 #end
 
 #gem "binding_of_caller"
+gem "rspec-rails"
+gem 'factory_girl_rails'
