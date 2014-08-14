@@ -3,6 +3,7 @@ require 'rails_helper'
 describe UsersController do
   before do
     @user = FactoryGirl.create(:user)
+    sign_in @user
   end
   describe "GET home" do
     it "has a 200 status code" do

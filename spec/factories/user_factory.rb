@@ -6,6 +6,6 @@ FactoryGirl.define do
     password_confirmation 'password'
     gender 'male'
     mobile '8956231472'
-    email 'user@example.com'
+    email 'user@mailinator.com'
   end
 end
